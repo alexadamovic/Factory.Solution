@@ -2,4 +2,18 @@
   Layout = "_Layout";
 }
 
-<h1>Dr. Sillystringz's Factory</h1>
+@using Factory.Models;
+
+<h1>Engineers</h1>
+
+@if (@Viewbag.EngineerList.Count == 0)
+{
+  <h3>No engineers have been added yet!</h3>
+} 
+
+@foreach (Engineer engineer in @Viewbag.EngineerList)
+{
+  <li>@Html.ActionLink($"{item.Description}", "Details", new { id = item.ItemId })</li>
+}
+
+<p>@Html.ActionLink("Add new item", "Create")</p>
