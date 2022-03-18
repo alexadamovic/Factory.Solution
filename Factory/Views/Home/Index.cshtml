@@ -19,7 +19,7 @@
       <li>@Html.ActionLink($"{engineer.EngineerName}", "Details", "Engineers", new { id = engineer.EngineerId })</li>
     }
 
-    <p>@Html.ActionLink("Add new engineer", "Create", "Engineers")</p>
+    <h5>@Html.ActionLink("Add new engineer", "Create", "Engineers")</h5>
   </div>
 
   <div class="col-6">
@@ -35,6 +35,6 @@
       <li>@Html.ActionLink($"{machine.MachineName}", "Details", "Machines", new { id = machine.MachineId })</li>
     }
 
-    <p>@Html.ActionLink("Add new machine", "Create", "Machines")</p>
+    <h5>@Html.ActionLink("Add new machine", "Create", "Machines")</h5>
   </div>
 </div>
