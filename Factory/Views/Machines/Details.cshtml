@@ -6,8 +6,8 @@
 
 <h2>Machine Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.MachineName): @Html.DisplayFor(model => model.MachineName)</h3>
-<h3>@Html.DisplayNameFor(model => model.MachineDetails): @Html.DisplayFor(model => model.MachineDetails)</h3>
+<h3>Name: @Html.DisplayFor(model => model.MachineName)</h3>
+<h3>Details: @Html.DisplayFor(model => model.MachineDetails)</h3>
 
 @if(@Model.JoinEntities.Count == 0)
 {

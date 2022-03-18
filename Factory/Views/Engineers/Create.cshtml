@@ -7,9 +7,9 @@
 <h4>Add a new engineer</h4>
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.EngineerName)
+  @Html.Label("Engineer Name")
   @Html.TextBoxFor(model => model.EngineerName)
-  @Html.LabelFor(model => model.EngineerDetails)
+  @Html.Label("Details")
   @Html.TextAreaFor(model => model.EngineerDetails)
   <input type="submit" value="Add new engineer" />
 }

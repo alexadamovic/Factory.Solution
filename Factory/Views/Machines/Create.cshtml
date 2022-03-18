@@ -7,9 +7,9 @@
 <h4>Add a new machine</h4>
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.MachineName)
+  @Html.Label("Machine Name")
   @Html.TextBoxFor(model => model.MachineName)
-  @Html.LabelFor(model => model.MachineDetails)
+  @Html.Label("Details")
   @Html.TextAreaFor(model => model.MachineDetails)
   <input type="submit" value="Add new machine" />
 }
