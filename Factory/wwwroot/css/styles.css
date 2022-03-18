@@ -1,0 +1,23 @@
+body {
+  background-color: bisque;
+}
+
+#mainLogo {
+  background-color: rgb(189, 140, 235);
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 5rem;
+}
+
+#footer {
+  position: fixed;
+  bottom: 1.25rem;
+  width: 100%;
+  height: 2.5rem;
+}
