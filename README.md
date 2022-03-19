@@ -19,7 +19,7 @@
 
 ## Description
 
-_This C# web application, styled as an engineer / machine management portal for Dr. Sillystringz's Factory, lets a user create a list of engineers and a list of machines that utilizes a MySQL database and connects the ```engineer``` and ```machine``` tables in Many-To-Many relationships (see infographic below). From the splash page, the user is able to view all engineer and machine objects in the database, with the option to navigate between views to add, delete, view details, and edit engineers and machines. By employing Entity and LINQ syntax, user form inputs are passed to the respective mySQL database tables through Post requests, and RESTful routes are employed with CRUD actions to ensure development standardization. HTML helper methods are also employed to DRY the code as much as possible. This application is meant to showcase proper database fundamentals in connecting an ASP.NET core web framework with mySQL databases using Entity._
+_This C# web application, styled as an engineer / machine management portal for Dr. Sillystringz's Factory, lets a user create a list of engineers and a list of machines, utilizing a MySQL database and connecting the engineer and machine tables in Many-To-Many relationships through the use of a join table (see infographic below). From the splash page, the user is able to view all engineer and machine objects in the database, with the option to navigate between views to add, delete, view details, and edit engineers and machines for full CRUD functionality. By employing Entity and LINQ syntax, user form inputs are passed to the respective mySQL database tables through Post requests, and RESTful routes are employed with to ensure development standardization. This application is meant to showcase proper use of Many-To-Many database relationships in connecting an ASP.NET core web framework with mySQL databases using Entity._
 
 ### Database Table Structure
 
@@ -34,25 +34,13 @@ _This C# web application, styled as an engineer / machine management portal for 
 
 #### To Set Up Project With Dependencies
 
-* _clone repository from https://github.com/alexadamovic/HairSalon.Solution_
+* _clone repository from https://github.com/alexadamovic/Factory.Solution_
 * _navigate to the project directory in your terminal/command line_
-* _navigate to the subdirectory HairSalon and enter ```dotnet restore``` to install project dependencies_
-
-#### To Import Database
-
-* _open MySql Workbench_
-* _in the Navigator > Administration window, select Data Import/Restore_
-* _in Import Options select Import from Self-Contained File_
-* _navigate to the file ```alex_adamovic.sql``` in the root directory of this project_
-* _under Default Schema to be Imported To, select the New button_
-* _enter the desired name of your database (you will need this name to set up your appsettings.json file properly)_
-* _click Ok_
-* _navigate to the tab called Import Progress and click Start Import at the bottom right corner of the window_
-* _your database is now ready to incorporate into this project_
+* _navigate to the subdirectory Factory and enter ```dotnet restore``` to install project dependencies_
 
 #### To Create appsettings.json
 
-* _navigate to the subdirectory HairSalon and create the file ```appsettings.json```_
+* _navigate to the subdirectory Factory and create the file ```appsettings.json```_
 * _add the following code:_
 ```
 {
@@ -62,19 +50,23 @@ _This C# web application, styled as an engineer / machine management portal for 
 }
 ```
 * _replace the applicable sections with your database name, your user ID, and your password_
-* _you are now ready to run the application_
+
+#### To Create Database using Migrations
+
+* _navigate to the project directory in your terminal/command line_
+* _navigate to the subdirectory Factory and enter ```dotnet ef database update``` to create a new local database for the project_
+* _the database will take the name specified in your ```appsettings.json``` file and can be viewed using MySQL_
 
 #### To Run the Web Application
 
-* _navigate to the subdirectory HairSalon and enter ```dotnet run``` for a snapshot server or ```dotnet watch run``` for a live updating server for the application_
+* _navigate to the subdirectory Factory and enter ```dotnet run``` for a snapshot server or ```dotnet watch run``` for a live updating server for the application_
 * _access the server in your browser by entering ```localhost:5000``` into your navigation bar_
 * _click the hyperlinks and submit forms to navigate between the views_
 * _enter ```ctrl``` + ```c``` for Windows or ```command``` + ```.``` for Mac in your terminal/command line to stop the server_
 
 ## Known Bugs
 
-* _user can still manually navigate to create client view in their browser to create a Client object before creating a Stylist object_
-* _because the value will be set to "null", client will only be available via search and not in the stylist list pages_
+* _user can instantiate multiple many-to-many relationships of the same engineer/machine combination_
 
 ## License
 
